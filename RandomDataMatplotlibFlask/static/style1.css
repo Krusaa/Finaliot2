@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(0, 0, 0);  
+    background-image: url("https://media.tenor.com/foHDdZ5s-3gAAAAC/universe-big.gif");
+    background-repeat: repeat;
+}
+
+
+.flexnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+
+}
+.flexnav a {
+    display: block;
+    background-color: rgb(3, 15, 11);
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #f2f2f2;
+    opacity: 70%;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px;
+    
+}
+.flexnav a:hover {
+    display: block;
+    background-color: rgb(248, 246, 248);
+    color: black;
+}
+
+.flexboxContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headerAlign{
+    text-align: center;
+}
+
+.charts{
+  max-width: 100%;
+  height: auto;
+}
+
+h1{
+    font-family:'Courier New', Courier, monospace;
+    display: block;
+    background-color: black;
+    opacity: 50%;
+    color: #f2f2f2;
+}
