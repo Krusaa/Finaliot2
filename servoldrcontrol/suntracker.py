@@ -4,11 +4,6 @@ import busio
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 import RPi.GPIO as gp
-import serial
-import sqlite3
-import time
-import datetime
-
 
 gp.setmode(gp.BCM)
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -35,38 +30,15 @@ sleep(1)
 pwm.start(0)
 pwm0.start(0)
 
-# conn = sqlite3.connect("Data.db", check_same_thread = False )
-# c = conn.cursor()
-
-
-# def create_table():
-#     c.execute('CREATE TABLE IF NOT EXISTS Solpanel(unix REAL, Date TEXT, Y REAL)') 
-
-
-# def data_entry():
-#     unix = time.time()
-#     date = str(datetime.datetime.fromtimestamp(unix).strftime('%Y-%m-%d %H:%M:%S'))
-#     y = mAhData
-#     c.execute("INSERT INTO Solpanel (unix, Date, Y) VALUES (?, ?, ?)",
-#               (unix, date, y))
-#     conn.commit()
-
-
-
 while True:
-    # print('LDR VAL0: ', chan0.value)
-    # print(verti)
-    # print(horiz)
-    # print('LDR VAL1', chan1.value)
-    # print('LDR VAL2: ', chan2.value)
-    # print('LDR VAL3', chan3.value)
+    print(verti)
+    print(horiz)
+    print('LDR VAL0: ', chan0.value)
+    print('LDR VAL1', chan1.value)
+    print('LDR VAL2: ', chan2.value)
+    print('LDR VAL3', chan3.value)
  
-    # ser = serial.Serial('/dev/ttyS0', 115200, timeout=2)
-    # data = ser.readline()
-    # if data:
-    #     #print(data.decode().strip())
-    #     mAhData = int(data.decode().strip())
-    #     print(mAhData)
+
 
     if chan0.value - 20 > chan1.value and verti > 0:
         verti -= 1
@@ -96,8 +68,4 @@ while True:
         pwm0.ChangeDutyCycle(dig)  
         sleep(0.01)
         pwm0.start(0)
-
-    # create_table()
-    # data_entry()
-    # sleep(0.5)
 
